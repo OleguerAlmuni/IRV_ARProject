@@ -17,7 +17,7 @@ public class GrabbableObject : MonoBehaviour
 
     
     
-    private void OnMouseUpAsButton()
+    public void GrabObject()
     {   
         if(leftHand.GetComponentInChildren<GrabbableObject>() == null)
         {
