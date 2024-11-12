@@ -2,16 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class GrabbableObject : MonoBehaviour, IWrabbable
+public class GrabbableObject : MonoBehaviour
 {
-    public void Wrap()
-    {
-        
-    }
-    
-    private void OnMouseUpAsButton()
-    {
-        HandController.Instance.OnHandWrap(this);
-    }
+    [SerializeField] private bool oneHand;
 }

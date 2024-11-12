@@ -2,7 +2,7 @@
 using UnityEngine;
 
 //Should implement wrap
-public class AssemblyComponent: MonoBehaviour, IWrabbable
+public class AssemblyComponent: GrabbableObject
 {
     [SerializeField] private Step myStep;
     private Rigidbody _rigidbody;
@@ -11,20 +11,7 @@ public class AssemblyComponent: MonoBehaviour, IWrabbable
     {
         _rigidbody = gameObject.GetComponent<Rigidbody>();
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-        }
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {   
         if (other.gameObject.GetComponent<Tool>())
@@ -34,6 +21,8 @@ public class AssemblyComponent: MonoBehaviour, IWrabbable
             if (!WorkflowController.Instance.AllRequiredStepsDone()) return;
             
             WorkflowController.Instance.Next();
+
+            this.transform.position = new Vector3(transform.position.x - 1f, transform.position.y, transform.position.z);
             
             Debug.Log("The step "+ myStep.description+ " has been completed!");
             

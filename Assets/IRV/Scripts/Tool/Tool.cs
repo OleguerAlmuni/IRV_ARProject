@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-public class Tool:MonoBehaviour, IWrabbable
+public class Tool: GrabbableObject
 {
-    
     private Rigidbody _rigidbody;
 
     private void Start()
