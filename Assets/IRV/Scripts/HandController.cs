@@ -10,6 +10,7 @@ public class HandController : MonoBehaviour
     [SerializeField] private GameObject rightHand;
     
     private Transform handOcupada;
+    
     private void Start()
     {
         Instance = this;
@@ -38,10 +39,5 @@ public class HandController : MonoBehaviour
     private bool IsGrabbed(Transform hand)
     {
         return hand == handOcupada;
-    }
-    
-    void Update()
-    {
-        
     }
 }
