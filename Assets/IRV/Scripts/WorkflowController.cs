@@ -24,19 +24,17 @@ public class WorkflowController: MonoBehaviour
         
         public bool IsMyTurn(Step step)
         {
-                if (instruction == null) return false;
-                if (step.index == instruction.actualStep.index)
-                {
-                        return true;
-                }
-
-                return false;
+                // Check if the provided step is part of the active steps
+                return instruction != null && instruction.activeSteps.Contains(step);
         }
 
-        public void Next()
+        public void CheckAndAdvance(Step step)
         {
-                //verify if al the previous steps are done
-                instruction.NextStep();
+                // Mark the step as completed and update the active steps
+                if (instruction != null && IsMyTurn(step))
+                {
+                        instruction.CheckThisStep(step);
+                }
         }
 
         public void End()
@@ -44,13 +42,14 @@ public class WorkflowController: MonoBehaviour
                 instruction = null;
         }
 
-        public bool AllRequiredStepsDone()
+        public bool AllRequiredStepsDone(Step step)
         {
-                if (instruction.actualStep.stepsRequired.Count == 0) return true;
-                
-                foreach (int step in instruction.actualStep.stepsRequired)
+                // Verify all prerequisites for the given step are completed
+                if (step.stepsRequired.Count == 0) return true;
+
+                foreach (var requiredStep in step.stepsRequired)
                 {
-                        if (!instruction.stepsToFollow[step].isDone)
+                        if (!requiredStep.isDone)
                         {
                                 return false;
                         }
@@ -59,5 +58,4 @@ public class WorkflowController: MonoBehaviour
                 return true;
         }
         
-
 }

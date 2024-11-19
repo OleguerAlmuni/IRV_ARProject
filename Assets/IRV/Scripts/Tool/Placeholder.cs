@@ -13,7 +13,7 @@ public class Placeholder : MonoBehaviour
         {
             //Check if the step is the correct one
             if (!WorkflowController.Instance.IsMyTurn(myStep)) return;
-            if (!WorkflowController.Instance.AllRequiredStepsDone()) return;
+            if (!WorkflowController.Instance.AllRequiredStepsDone(myStep)) return;
 
             XRGrabInteractable interactable = other.gameObject.GetComponent<XRGrabInteractable>();
             interactable.enabled = false;
@@ -27,7 +27,7 @@ public class Placeholder : MonoBehaviour
             
             Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), other);
 
-            WorkflowController.Instance.Next();
+            WorkflowController.Instance.CheckAndAdvance(myStep);
             
             Debug.Log("The step "+ myStep.description+ " has been completed!");
             

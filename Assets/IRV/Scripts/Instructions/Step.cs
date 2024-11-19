@@ -6,11 +6,10 @@ using UnityEngine;
 public class Step: ScriptableObject
 {
         public string description;
-        public List<int> stepsRequired;
-        public int index;
+        [SerializeField] public List<Step> stepsRequired = new List<Step>();
         public bool isDone;
         
-        public void CheckStep()
+        public void StepCompleted()
         {
                 isDone = true;
         }
@@ -19,5 +18,19 @@ public class Step: ScriptableObject
         {
                 return isDone;
         }
-        
+
+        public bool CheckPreRequierments()
+        {
+                bool prerequisitesDone = true;
+                foreach (var prerequisite in stepsRequired)
+                {
+                        if (!prerequisite.isDone)
+                        {
+                                prerequisitesDone = false;
+                                break;
+                        }
+                }
+
+                return prerequisitesDone;
+        }
 }

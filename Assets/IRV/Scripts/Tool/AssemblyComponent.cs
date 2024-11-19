@@ -18,9 +18,9 @@ public class AssemblyComponent: GrabbableObject
         {
             //Check if the step is the correct one
             if (!WorkflowController.Instance.IsMyTurn(myStep)) return;
-            if (!WorkflowController.Instance.AllRequiredStepsDone()) return;
+            if (!WorkflowController.Instance.AllRequiredStepsDone(myStep)) return;
             
-            WorkflowController.Instance.Next();
+            WorkflowController.Instance.CheckAndAdvance(myStep);
 
             this.transform.position = new Vector3(transform.position.x - 1f, transform.position.y, transform.position.z);
             
