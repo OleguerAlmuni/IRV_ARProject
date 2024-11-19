@@ -6,6 +6,7 @@ using UnityEngine;
 public class Step: ScriptableObject
 {
         public string description;
+        public GameObject objectPrefab;
         [SerializeField] public List<Step> stepsRequired = new List<Step>();
         public bool isDone;
         
