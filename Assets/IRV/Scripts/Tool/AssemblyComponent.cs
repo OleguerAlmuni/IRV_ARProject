@@ -1,4 +1,5 @@
 ﻿using System;
+using IRV.Scripts.Audio;
 using UnityEngine;
 
 //Should implement wrap
@@ -21,6 +22,8 @@ public class AssemblyComponent: GrabbableObject
             if (!WorkflowController.Instance.AllRequiredStepsDone(myStep)) return;
             
             WorkflowController.Instance.CheckAndAdvance(myStep);
+            
+            AudioManager.Instance.PlaySound("Hammer");
 
             this.transform.position = new Vector3(transform.position.x , transform.position.y, transform.position.z);
             
@@ -33,5 +36,10 @@ public class AssemblyComponent: GrabbableObject
     public void Wrap()
     {
 
+    }
+    
+    public Step getStep()
+    {
+        return myStep;
     }
 }

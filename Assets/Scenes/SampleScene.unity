@@ -693,7 +693,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: []
-  sfx: []
+  sfx:
+  - name: Hammer
+    audioClip: {fileID: 8300000, guid: 1a86c88ebd1dca84797bd790526d37eb, type: 3}
   musicSource: {fileID: 733833639}
   sfxSource: {fileID: 137668899}
 --- !u!4 &1358028486
