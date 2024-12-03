@@ -19,7 +19,6 @@ public class Placeholder : MonoBehaviour
             interactable.enabled = false;
             
             other.transform.SetParent(gameObject.transform);
-            other.transform.localPosition = new Vector3(1.31f, 0,0);
             other.transform.localEulerAngles = Vector3.zero;
             
             Rigidbody rigidbody = other.GetComponent<Rigidbody>();

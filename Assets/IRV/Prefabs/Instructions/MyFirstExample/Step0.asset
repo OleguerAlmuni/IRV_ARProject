@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Step0
   m_EditorClassIdentifier: 
   description: Put the assembly component in the placeholder
-  stepsRequired: 
-  index: 0
-  isDone: 1
+  objectPrefab: {fileID: 0}
+  stepsRequired: []
+  isDone: 0

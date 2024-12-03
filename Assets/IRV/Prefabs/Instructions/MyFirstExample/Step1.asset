@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Step1
   m_EditorClassIdentifier: 
   description: Tool hit assembly component
+  objectPrefab: {fileID: 0}
   stepsRequired:
   - {fileID: 11400000, guid: 96996d5ff9ad16b4eae21b1ca209c5c6, type: 2}
-  - {fileID: 11400000, guid: 96996d5ff9ad16b4eae21b1ca209c5c6, type: 2}
-  index: 1
-  isDone: 1
+  isDone: 0
