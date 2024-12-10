@@ -9,23 +9,26 @@ namespace IRV.Scripts.Tool
         private AssemblyComponent _assemblyComponent;
         
         [SerializeField] 
-        [Range(0f, 0.5f)] 
+        [Range(0.5f, 5f)] 
         private float lerpSpeed;
         
         [SerializeField] 
         private Color lerpColor;
 
+        private Color _startColor;
+
         private void Start()
         {
             _meshRenderer = GetComponent<MeshRenderer>();
             _assemblyComponent = GetComponent<AssemblyComponent>();
+            _startColor = _meshRenderer.material.color;
         }
         
         private void Update()
         {
             if (WorkflowController.Instance.IsMyTurn(_assemblyComponent.getStep()))
             {
-                _meshRenderer.material.color = Color.Lerp(_meshRenderer.material.color, lerpColor, lerpSpeed);
+                _meshRenderer.material.color = Color.Lerp(_startColor, lerpColor, Mathf.PingPong(Time.time * lerpSpeed, 1));
             }
         }
     }
