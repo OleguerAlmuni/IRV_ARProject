@@ -6,32 +6,49 @@ using UnityEngine;
 public class Step: ScriptableObject
 {
         public string description;
-        public GameObject objectPrefab;
-        [SerializeField] public List<Step> stepsRequired = new List<Step>();
-        public bool isDone;
+        
+        [SerializeField]
+        public GameObject[] objectPrefabs;
+        
+        [SerializeField]
+        private Step _previousStep;
+        
+        [SerializeField]
+        private Step _nextStep;
+        
+        private bool _isDone;
         
         public void StepCompleted()
         {
-                isDone = true;
+                _isDone = true;
+        }
+
+        public void Reset()
+        {
+                _isDone = false;
         }
 
         public bool IsStepDone()
         {
-                return isDone;
+                return _isDone;
         }
 
-        public bool CheckPreRequierments()
+        public bool IsPreviousStepDone()
         {
-                bool prerequisitesDone = true;
-                foreach (var prerequisite in stepsRequired)
+                if (_previousStep == null)
                 {
-                        if (!prerequisite.isDone)
-                        {
-                                prerequisitesDone = false;
-                                break;
-                        }
+                        return true;
                 }
+                return _previousStep.IsStepDone();
+        }
 
-                return prerequisitesDone;
+        public Step getPrevious()
+        {
+                return _previousStep;
+        }
+        
+        public Step getNext()
+        {
+                return _nextStep;
         }
 }

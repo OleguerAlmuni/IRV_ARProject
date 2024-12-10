@@ -1,4 +1,5 @@
 ﻿using System;
+using IRV.Scripts.Instructions;
 using UnityEngine;
 
 public class WorkflowController: MonoBehaviour
@@ -25,7 +26,7 @@ public class WorkflowController: MonoBehaviour
         public bool IsMyTurn(Step step)
         {
                 // Check if the provided step is part of the active steps
-                return instruction != null && instruction.activeSteps.Contains(step);
+                return instruction != null && instruction.getCurrentStep().Equals(step);
         }
 
         public void CheckAndAdvance(Step step)
@@ -33,7 +34,7 @@ public class WorkflowController: MonoBehaviour
                 // Mark the step as completed and update the active steps
                 if (instruction != null && IsMyTurn(step))
                 {
-                        instruction.CheckThisStep(step);
+                        instruction.CompleteCurrentStep(step);
                 }
         }
 
@@ -44,18 +45,7 @@ public class WorkflowController: MonoBehaviour
 
         public bool AllRequiredStepsDone(Step step)
         {
-                // Verify all prerequisites for the given step are completed
-                if (step.stepsRequired.Count == 0) return true;
-
-                foreach (var requiredStep in step.stepsRequired)
-                {
-                        if (!requiredStep.isDone)
-                        {
-                                return false;
-                        }
-                }
-
-                return true;
+                return step.getPrevious().IsStepDone() || step.getPrevious() == null;
         }
         
 }
