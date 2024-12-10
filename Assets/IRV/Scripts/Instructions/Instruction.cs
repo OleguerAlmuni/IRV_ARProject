@@ -1,64 +1,49 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-[CreateAssetMenu(menuName = "Instructions/New Instruction")]
-public class Instruction : ScriptableObject
+namespace IRV.Scripts.Instructions
 {
-    public List<Step> activeSteps = new List<Step>();
-    [SerializeField] private List<Step> stepsToFollow = new List<Step>();
-
-    public void Reset()
+    [CreateAssetMenu(menuName = "Instructions/New Instruction")]
+    public class Instruction : ScriptableObject
     {
-        activeSteps.Clear();
-
-        // Reset all steps in the sequence
-        foreach (var step in stepsToFollow)
+        
+        [SerializeField]
+        private Step currentStep;
+        
+        public Step getCurrentStep()
         {
-            step.isDone = false;
+            return currentStep;
         }
 
-        // Initialize active steps with steps that have no prerequisites or have all prerequisites done
-        UpdateActiveSteps();
-    }
-
-    public void CheckThisStep(Step step)
-    {
-        if (activeSteps.Contains(step) && !step.isDone)
+        public void Reset()
         {
-            step.StepCompleted();
-            UpdateActiveSteps();
-        }
-    }
-
-    private void UpdateActiveSteps()
-    {
-        activeSteps.Clear();
-
-        foreach (var step in stepsToFollow)
-        {
-            // Check if the step is already done
-            if (step.isDone) continue;
-
-            // Check if all prerequisite steps are completed
-            if (step.CheckPreRequierments())
+            while (true)
             {
-                activeSteps.Add(step);
+                currentStep.Reset();
+
+                if (currentStep.getPrevious() != null)
+                {
+                    return;
+                }
+
+                currentStep = currentStep.getPrevious();
             }
         }
 
-        if (AllStepsCompleted())
+        public void CompleteCurrentStep(Step step)
         {
+            if (!currentStep.Equals(step) || step.IsStepDone()) return;
+            
+            currentStep.StepCompleted();
+                
+            if (currentStep.getNext() != null)
+            {
+                currentStep = currentStep.getNext();
+                return;
+            }
+                
             WorkflowController.Instance.End();
         }
-    }
-
-    private bool AllStepsCompleted()
-    {
-        foreach (var step in stepsToFollow)
-        {
-            if (!step.isDone)
-                return false;
-        }
-        return true;
     }
 }
