@@ -9,6 +9,8 @@ EditorBuildSettings:
     path: Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/DemoScene.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
   m_configObjects:
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 20b6f0cc8ada45d4fb79d4b500846227,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 007142d6ade290d45bdad7b0034969e8,
       type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 9a9e58ea64f8a2542a642b17e8dce425,

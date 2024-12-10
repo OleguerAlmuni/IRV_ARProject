@@ -25,7 +25,7 @@ public class AssemblyComponent: GrabbableObject
             
             AudioManager.Instance.PlaySound("Hammer");
 
-            this.transform.position = new Vector3(transform.position.x - 1f, transform.position.y, transform.position.z);
+            this.transform.position = new Vector3(transform.position.x , transform.position.y, transform.position.z);
             
             Debug.Log("The step "+ myStep.description+ " has been completed!");
             
