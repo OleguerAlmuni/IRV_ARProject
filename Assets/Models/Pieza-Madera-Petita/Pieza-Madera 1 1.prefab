@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4773355492708978395
+--- !u!1 &4706141318103116689
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 621060678836222546}
+  - component: {fileID: 4241025346468084773}
   m_Layer: 0
-  m_Name: Pieza-Madera 1
+  m_Name: Pieza-Madera 1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &621060678836222546
+--- !u!4 &4241025346468084773
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4773355492708978395}
+  m_GameObject: {fileID: 4706141318103116689}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.032626633, y: 0.032626633, z: 0.032626633}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1056535705411067308}
+  - {fileID: 546286046046577618}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &5373072915795267946
+--- !u!1001 &4876730694651293460
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 621060678836222546}
+    m_TransformParent: {fileID: 4241025346468084773}
     m_Modifications:
     - target: {fileID: 4916080285888859334, guid: 5b75c62e8dca10b4a8e87f865b39809a,
         type: 3}
@@ -115,9 +115,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b75c62e8dca10b4a8e87f865b39809a, type: 3}
---- !u!4 &1056535705411067308 stripped
+--- !u!4 &546286046046577618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4916080285888859334, guid: 5b75c62e8dca10b4a8e87f865b39809a,
     type: 3}
-  m_PrefabInstance: {fileID: 5373072915795267946}
+  m_PrefabInstance: {fileID: 4876730694651293460}
   m_PrefabAsset: {fileID: 0}
