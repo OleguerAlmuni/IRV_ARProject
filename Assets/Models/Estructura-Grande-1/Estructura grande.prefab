@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7083154626142021259}
   - component: {fileID: 2388938504522654224}
   - component: {fileID: 3009209649095233526}
+  - component: {fileID: 778941443878088067}
   m_Layer: 0
   m_Name: Estructura grande
   m_TagString: Untagged
@@ -213,6 +214,27 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!65 &778941443878088067
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5073974039913053664}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.070307404, y: 0.9241984, z: 0.44165224}
+  m_Center: {x: 0.0037653744, y: 0.0034995228, z: -0.15110278}
 --- !u!1001 &6816528933767345284
 PrefabInstance:
   m_ObjectHideFlags: 0
