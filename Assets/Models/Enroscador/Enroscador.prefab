@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2203586686523487191}
   - component: {fileID: 7614770138772324321}
   - component: {fileID: 1502631713909272402}
+  - component: {fileID: 513068371573225072}
   m_Layer: 0
   m_Name: Enroscador
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 882421177515984474}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7462552, y: 0.05212383, z: 0.32305932}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -0.23255, y: -0.0133827105, z: 0.023545373}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7820973166662380596}
@@ -213,6 +214,27 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!65 &513068371573225072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882421177515984474}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.045099463, y: 1, z: 0.5091006}
+  m_Center: {x: 0.016838448, y: 0, z: 0.24544667}
 --- !u!1001 &7711029892493118431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -224,17 +246,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6e90d78f19a5d87439d76c2171bd4650,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.025276363
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e90d78f19a5d87439d76c2171bd4650,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0026072636
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e90d78f19a5d87439d76c2171bd4650,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0053305924
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e90d78f19a5d87439d76c2171bd4650,
         type: 3}
@@ -271,6 +293,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6e90d78f19a5d87439d76c2171bd4650,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: de9a6cea2c674384abc79ddfb9810815, type: 2}
     - target: {fileID: 919132149155446097, guid: 6e90d78f19a5d87439d76c2171bd4650,
         type: 3}
       propertyPath: m_Name
