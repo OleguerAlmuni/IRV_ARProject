@@ -15,5 +15,5 @@ MonoBehaviour:
   description: 
   objectPrefabs:
   - {fileID: 4773355492708978395, guid: 871f71720bbbe044cb445c7f00eb5ce0, type: 3}
-  _previousStep: {fileID: 11400000, guid: d49ab73280c8b74489e0fdd58ad2d56d, type: 2}
-  _nextStep: {fileID: 0}
+  _previousStep: {fileID: 11400000, guid: b5f9d630331b39746938a9aa58143390, type: 2}
+  _nextStep: {fileID: 11400000, guid: 9ba6749e6fb0e2446859753f6650e979, type: 2}
