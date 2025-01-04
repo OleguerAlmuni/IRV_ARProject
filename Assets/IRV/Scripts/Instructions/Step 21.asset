@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Step 21
   m_EditorClassIdentifier: 
   description: 
-  objectPrefabs: []
-  _previousStep: {fileID: 0}
-  _nextStep: {fileID: 0}
+  objectPrefabs:
+  - {fileID: 3513673647539219581, guid: b95d63264bb25dc4685164018bdaba65, type: 3}
+  - {fileID: 882421177515984474, guid: e95408c9f1e04eb4f8936cf649ae3a11, type: 3}
+  - {fileID: 5073974039913053664, guid: 1aac950229eeadc49bf22a178dd093e8, type: 3}
+  _previousStep: {fileID: 11400000, guid: 5e21143a1df6e484e82c8d3acad0db86, type: 2}
+  _nextStep: {fileID: 11400000, guid: c5299e9065e413e41834b6fd746972ff, type: 2}

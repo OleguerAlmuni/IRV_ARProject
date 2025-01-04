@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20103605ddcacf848ba6d19d870f2af6, type: 3}
-  m_Name: Step 19
+  m_Name: Step 22
   m_EditorClassIdentifier: 
   description: 
   objectPrefabs:
-  - {fileID: 4706141318103116689, guid: a4d1612d3e30e264094159002474e729, type: 3}
-  _previousStep: {fileID: 11400000, guid: 2e8115fba40626c43b52c19cf07ee006, type: 2}
-  _nextStep: {fileID: 11400000, guid: 5e21143a1df6e484e82c8d3acad0db86, type: 2}
+  - {fileID: 3513673647539219581, guid: b95d63264bb25dc4685164018bdaba65, type: 3}
+  _previousStep: {fileID: 11400000, guid: b465d7fc978fcf24c840aa0a93c4664c, type: 2}
+  _nextStep: {fileID: 11400000, guid: 39f19b66384b02a4d9f759262eec96a4, type: 2}

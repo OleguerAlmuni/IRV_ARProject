@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: 
   objectPrefabs:
-  - {fileID: 4773355492708978395, guid: 871f71720bbbe044cb445c7f00eb5ce0, type: 3}
+  - {fileID: 4706141318103116689, guid: a4d1612d3e30e264094159002474e729, type: 3}
   _previousStep: {fileID: 11400000, guid: d49ab73280c8b74489e0fdd58ad2d56d, type: 2}
-  _nextStep: {fileID: 0}
+  _nextStep: {fileID: 11400000, guid: b2ddd695525d33d45977b2611de2d344, type: 2}
